@@ -2,11 +2,16 @@
 
 ```elixir
 Mix.install([
-  {:axon_onnx, github: "elixir-nx/axon_onnx"}
+  {:axon_onnx, github: "elixir-nx/axon_onnx"},
+  {:exla, "~> 0.2.1"}
 ])
 ```
 
 ## Section
+
+```elixir
+EXLA.set_as_nx_default([:tpu, :cuda, :rocm, :host])
+```
 
 ```elixir
 {model, params} = AxonOnnx.import("/data/vgg16.onnx")
