@@ -1,0 +1,18 @@
+# Covert VGG16 model ONNX to dets
+
+```elixir
+Mix.install([
+  {:axon_onnx, github: "elixir-nx/axon_onnx"}
+])
+```
+
+## Section
+
+```elixir
+{model, params} = AxonOnnx.import("/data/vgg16.onnx")
+
+:dets.open_file("vgg16", type: :bag, file: '/data/vgg16.dets')
+:dets.insert("vgg16", {1, {model, params}})
+:dets.sync("vgg16")
+:dets.stop()
+```

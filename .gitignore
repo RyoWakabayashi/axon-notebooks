@@ -1,0 +1,17 @@
+.bash_history
+.cache
+.config
+.elixir_ls
+.hex
+.ipynb_checkpoints
+.ipython
+.jupyter
+.local
+.mix
+.wget-hsts
+
+_build
+deps
+
+*.dets
+*.onnx
